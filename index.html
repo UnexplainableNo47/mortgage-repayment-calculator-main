@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <div class="main">
+      <!--Mortgage panel start-->
+      <div class="mortgage-Calculator">
+        <!--form Start-->
+        <form action="">
+          <div class="flex h-4">
+            <h3 role="heading" class="heading">Mortgage Calculator</h3>
+            <a class="btn-Clear">Clear All</a>
+          </div>
+
+
+            <div>
+              <label for="mortgage-Amount">Mortgage Amount</label>
+              <div class="textbox">
+                <label class="symbol">R</label>
+                <input type="text"  id="mortgage-Amount">
+              </div>
+            </div>
+
+
+            <div class="flex">
+              <div >
+                <label for="Mortgage-Term">Mortgage Term</label>
+                <div class="textbox-reverse">
+                  <input type="text" id="Mortgage-Term">
+                  <label class="symbol">years</label>
+                </div>
+              </div> 
+              <div>
+                <label for="Interest-Rate">Interest Rate</label>
+                <div class="textbox-reverse">
+                  <input type="text" id="Interest-Rate">
+                  <label class="symbol">%</label>
+                </div>
+              </div>              
+            </div>
+ 
+            <div class="mortgageType">
+              <label for="Mortgage-Type">Mortgage Type</label>
+              <div><input type="radio" name="Mortgage-Type" id="Repayment"><label for="Repayment">Repayment</label></div>
+              <div><input type="radio" name="Mortgage-Type" id="Interest-Only"><label for="Interest-Only">Interest Only</label></div>
+            </div>
+            
+            <button class="btn-CalcRepayment" type="submit"><img src="./assets/images/icon-calculator.svg" alt="icon">Calculate Repayments</button>
+        </form>
+        <!--form End-->
+      </div>
+      <!--Mortgage panel end-->
+
+      <!--Mortgage-Results panel-->
+      <div class="mortgage-Results">
+
+      </div>
+      <!--Mortgage-Results panel end-->
+    </div>
+  </div>
+
+
+
+
+  <!-- Completed results start -->
+  <div class="completeResultsPanel">
+    <h2>Your results</h2>
+
+    <p>Your results are shown below based on the information you provided. 
+      To adjust the results, edit the form and click “calculate repayments” again.</p>
+
+    <div class="resultSubPanel">
+      <p>Your monthly repayments</p>
+      <p>$65415661.58</p>
+      <hr>
+      <p>Total you'll repay over the term</p>
+      <p>$567,346,354.56</p>
+    </div>
+  </div>
+  <!-- Completed results end -->
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>  
+  <!-- Empty results start -->
+  
+  <div class="errorsStatePanel">
+      <img src="./assets/images/illustration-empty.svg" alt="EmptyImg">
+    <h2>Results shown here</h2>
+    <p>Complete the form and click “calculate repayments” to see what 
+      your monthly repayments would be.</p>
+  </div>
+
+
+  <!-- Empty results end -->
+</html>
