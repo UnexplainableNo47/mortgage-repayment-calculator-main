@@ -4,9 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
+  <!--fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+  <!--JavaScript-->
+  <script src="./index.js" defer></script>
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
@@ -24,10 +28,10 @@
       <!--Mortgage panel start-->
       <div class="mortgage-Calculator">
         <!--form Start-->
-        <form action="">
+        <form id="form" method="post">
           <div class="flex h-4">
             <h3 role="heading" class="heading">Mortgage Calculator</h3>
-            <a class="btn-Clear">Clear All</a>
+            <a class="btn-Clear" href="#">Clear All</a>
           </div>
 
 
@@ -35,33 +39,37 @@
               <label for="mortgage-Amount">Mortgage Amount</label>
               <div class="textbox">
                 <label class="symbol">R</label>
-                <input type="text"  id="mortgage-Amount">
+                <input type="text" id="mortgage-Amount" onkeyup="numbersOnly(this)">
               </div>
+              <label for="mortgage-Amount" class="error" id="mortgage-Amount-Msg"></label>
             </div>
 
 
             <div class="flex">
               <div >
-                <label for="Mortgage-Term">Mortgage Term</label>
-                <div class="textbox-reverse">
-                  <input type="text" id="Mortgage-Term">
+                <label for="Mortgage-Term ">Mortgage Term</label>
+                <div class="textbox-reverse error">
                   <label class="symbol">years</label>
+                  <input type="text" id="mortgage-Term" onkeyup="numbersOnly(this)">
                 </div>
+                <label for="Mortgage-Term" class="error" id="mortgage-Term-Msg"></label>
               </div> 
               <div>
                 <label for="Interest-Rate">Interest Rate</label>
                 <div class="textbox-reverse">
-                  <input type="text" id="Interest-Rate">
                   <label class="symbol">%</label>
+                  <input type="text" maxlength="4" id="Interest-Rate" onkeyup="numbersOnly(this)">
                 </div>
+                <label for="Interest-Rate" class="error" id="Interest-Rate-Msg"></label>
               </div>              
             </div>
- 
+
+            <p for="Mortgage-Type">Mortgage Type</p>
             <div class="mortgageType">
-              <label for="Mortgage-Type">Mortgage Type</label>
-              <div><input type="radio" name="Mortgage-Type" id="Repayment"><label for="Repayment">Repayment</label></div>
-              <div><input type="radio" name="Mortgage-Type" id="Interest-Only"><label for="Interest-Only">Interest Only</label></div>
+              <input type="radio" name="Mortgage-Type" id="Repayment"><label for="Repayment">Repayment</label>
+              <input type="radio" name="Mortgage-Type" id="Interest-Only"><label for="Interest-Only">Interest Only</label>
             </div>
+            <label for="Mortgage-Type" class="error" id="mortgage-Type-Msg"></label>
             
             <button class="btn-CalcRepayment" type="submit"><img src="./assets/images/icon-calculator.svg" alt="icon">Calculate Repayments</button>
         </form>
@@ -72,45 +80,47 @@
       <!--Mortgage-Results panel-->
       <div class="mortgage-Results">
 
+        <!-- Empty results start -->
+        <div class="errorsStatePanel">
+          <img src="./assets/images/illustration-empty.svg" alt="EmptyImg">
+          <h3>Results shown here</h3>
+          <p>Complete the form and click “calculate repayments” to see what 
+            your monthly repayments would be.</p>
+        </div>
+      <!-- Empty results end -->
+
+       <!-- Completed results start -->
+       <div class="completeResultsPanel">
+        <h3>Your results</h3>
+    
+        <p>Your results are shown below based on the information you provided. 
+          To adjust the results, edit the form and click “calculate repayments” again.</p>
+    
+        <div class="resultSubPanel">
+          <p>Your monthly repayments</p>
+          <h1 class="monthlyPayments" id="monthly-Payments">$65,410.58</h1>
+          <hr>
+          <p>Total you'll repay over the term</p>
+          <h2 class="repayTerm" id="repayTerm">$567,346,354.56</h2>
+        </div>
+      </div>
+      <!-- Completed results end -->
+
       </div>
       <!--Mortgage-Results panel end-->
+
     </div>
   </div>
 
 
 
 
-  <!-- Completed results start -->
-  <div class="completeResultsPanel">
-    <h2>Your results</h2>
-
-    <p>Your results are shown below based on the information you provided. 
-      To adjust the results, edit the form and click “calculate repayments” again.</p>
-
-    <div class="resultSubPanel">
-      <p>Your monthly repayments</p>
-      <p>$65415661.58</p>
-      <hr>
-      <p>Total you'll repay over the term</p>
-      <p>$567,346,354.56</p>
-    </div>
-  </div>
-  <!-- Completed results end -->
+ 
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
 </body>  
-  <!-- Empty results start -->
-  
-  <div class="errorsStatePanel">
-      <img src="./assets/images/illustration-empty.svg" alt="EmptyImg">
-    <h2>Results shown here</h2>
-    <p>Complete the form and click “calculate repayments” to see what 
-      your monthly repayments would be.</p>
-  </div>
 
-
-  <!-- Empty results end -->
 </html>
