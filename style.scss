@@ -126,6 +126,9 @@ label{
     flex-wrap: wrap;
     width: 50%;
 }
+input[type="text"]{
+    padding:0 0.5em 0 0.5em;
+}
 input[type="radio"] + label:hover{
     cursor: pointer;
 }
@@ -177,6 +180,7 @@ input[type="radio"]:checked + label::before{
 .completeResultsPanel{
     display: none;
     color: var(--White);
+    width: 100%;
     
     h3{
         margin-bottom: 1em ;
@@ -188,7 +192,7 @@ input[type="radio"]:checked + label::before{
         font-weight: 300;
     }
 }
-.errorsStatePanel{
+.StaticPanel{
     margin: auto;
     text-align: center;
     color: white;
@@ -204,6 +208,7 @@ input[type="radio"]:checked + label::before{
 }
 .resultSubPanel{
     width: 100%;
+    overflow: hidden;
     height: min-content;
     border-top: 3px solid var(--Lime);
     background-color: rgba(0, 0, 0, 0.308);

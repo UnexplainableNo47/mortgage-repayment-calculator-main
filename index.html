@@ -28,10 +28,10 @@
       <!--Mortgage panel start-->
       <div class="mortgage-Calculator">
         <!--form Start-->
-        <form id="form" method="post">
+        <form id="form" method="dialog">
           <div class="flex h-4">
             <h3 role="heading" class="heading">Mortgage Calculator</h3>
-            <a class="btn-Clear" href="#">Clear All</a>
+            <button class="btn-Clear" onclick="clear()">Clear All</button>
           </div>
 
 
@@ -48,7 +48,7 @@
             <div class="flex">
               <div >
                 <label for="Mortgage-Term ">Mortgage Term</label>
-                <div class="textbox-reverse error">
+                <div class="textbox-reverse">
                   <label class="symbol">years</label>
                   <input type="text" id="mortgage-Term" onkeyup="numbersOnly(this)">
                 </div>
@@ -81,7 +81,7 @@
       <div class="mortgage-Results">
 
         <!-- Empty results start -->
-        <div class="errorsStatePanel">
+        <div class="StaticPanel" id="Static-Panel">
           <img src="./assets/images/illustration-empty.svg" alt="EmptyImg">
           <h3>Results shown here</h3>
           <p>Complete the form and click “calculate repayments” to see what 
@@ -90,7 +90,7 @@
       <!-- Empty results end -->
 
        <!-- Completed results start -->
-       <div class="completeResultsPanel">
+       <div class="completeResultsPanel" id="Results-Panel">
         <h3>Your results</h3>
     
         <p>Your results are shown below based on the information you provided. 
@@ -119,7 +119,7 @@
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/UnexplainableNo47">Marty</a>.
   </div>
 </body>  
 
