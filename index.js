@@ -19,12 +19,20 @@ const mortgage_Type_Str = document.getElementById('mortgage-Type-Msg')
 const monthly_Payments = document.getElementById('monthly-Payments')
 const repayTerm = document.getElementById('repayTerm')
 
+const clearAll = document.getElementById('clearAll')
+
 
 const allInputs = [mortgage_amount, mortgage_Term, interest_Rate]
 
-    function clear(){
-        document.getElementById("form").reset();
-    }
+ClearAll.addEventListener("click", () => {
+    mortgage_amount.value = "";
+    mortgage_Term.value = "";
+    interest_Rate.value = "";
+    repayment.checked = false;
+    interest_Only.checked = false;
+    Static_Panel.style.display ="block"
+    Results_Panel.style.display ="none"
+});
 
 form.addEventListener('submit', (e) =>{
     //creating error list
